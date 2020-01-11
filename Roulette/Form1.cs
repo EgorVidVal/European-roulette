@@ -23,20 +23,19 @@ namespace Roulette
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            Output.Text += "***********\n";
 
             int z = Random_rull();
 
             BaseGame bas = new BaseGame();
 
             //Что выпало
-            Output.Text += "\n";
             Output.Text += "Выпадение\n";
-            Output.Text += "***********\n";
-            Output.Text += bas.Color_nubmer(z) + "\n";
+          
+            Output.Text +="\n" + bas.Color_nubmer(z) + "\n";
             Output.Text += Convert.ToString(z) + "\n";
-            Output.Text += "************" + "\n";
-
+            Output.Text += "\n";
+            Output.Text += "Результат: \n";
 
             //Проверяет все ставки из интрукции
             for (int i = 0; i < instruction.Count(); i++)
@@ -58,7 +57,8 @@ namespace Roulette
             }
 
             instruction = new List<object>();
-
+            Output.Text += "************" + "\n";
+            Output.Text += "\n";
 
         }
 
