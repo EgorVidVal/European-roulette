@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Roulette
 {
-    static class Program
+    static class Program 
     {
         /// <summary>
         /// Главная точка входа для приложения.
@@ -19,6 +19,6 @@ namespace Roulette
             Application.Run(new Start_Game());
         }
         
-        
+
     }
 }

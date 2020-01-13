@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.chet = new System.Windows.Forms.Button();
             this.but1v18 = new System.Windows.Forms.Button();
             this.but19v36 = new System.Windows.Forms.Button();
@@ -83,6 +84,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Output = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.zed = new ZedGraph.ZedGraphControl();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -781,11 +783,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // zed
+            // 
+            this.zed.Location = new System.Drawing.Point(11, 305);
+            this.zed.Name = "zed";
+            this.zed.ScrollGrace = 0D;
+            this.zed.ScrollMaxX = 0D;
+            this.zed.ScrollMaxY = 0D;
+            this.zed.ScrollMaxY2 = 0D;
+            this.zed.ScrollMinX = 0D;
+            this.zed.ScrollMinY = 0D;
+            this.zed.ScrollMinY2 = 0D;
+            this.zed.Size = new System.Drawing.Size(789, 303);
+            this.zed.TabIndex = 132;
+            this.zed.Load += new System.EventHandler(this.Zed_Load_1);
+            // 
             // Start_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 303);
+            this.ClientSize = new System.Drawing.Size(983, 668);
+            this.Controls.Add(this.zed);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Output);
             this.Controls.Add(this.label1);
@@ -907,6 +925,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox Output;
         private System.Windows.Forms.Button button1;
+        private ZedGraph.ZedGraphControl zed;
     }
 }
 

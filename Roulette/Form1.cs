@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZedGraph;
 
 namespace Roulette
 {
@@ -19,8 +21,12 @@ namespace Roulette
             InitializeComponent();
         }
 
+        //Данные о ставке
         List<object> instruction = new List<object>() { };
-
+        //Список для хранений историй банка и колличества игр
+        PointPairList history = new PointPairList();
+        //Счетчик колличетсва игр
+        int count = 0;
         private void Button1_Click(object sender, EventArgs e)
         {
             Output.Text += "***********\n";
@@ -42,7 +48,7 @@ namespace Roulette
             {
                 if (Convert.ToString(instruction[i].GetType()) == "Roulette.RoulletConb")
                 {
-
+                    //Если в инструкции RoulletConb там надятся сведения о ставке.
                     BaseGame game = CombStatr((RoulletConb)instruction[i]);
 
                     if (game.Outcome(z, (int)instruction[i + 1]) == 0)
@@ -51,11 +57,18 @@ namespace Roulette
                     }
                     else
                     {
-                        Output.Text += "Ставка на " + instruction[i - 1] + " победила, выигрыш: " + game.Bank((int)numericUpDown1.Value, z, (int)instruction[i + 1]) + "\n";
+                        int bank = game.Bank((int)numericUpDown1.Value, z, (int)instruction[i + 1]);
+                        Output.Text += "Ставка на " + instruction[i - 1] + " победила, выигрыш: " + bank  + "\n";
+                        // обновляет банк если выиград
+                        richTextBox7.Text = Convert.ToString(Convert.ToInt32(richTextBox7.Text) + bank);
                     }
                 }
             }
 
+            //Добавляет в список колилчество денег и какой ход для визуализации на графике.
+            history.Add((double)count,Convert.ToDouble(richTextBox7.Text));
+            count++;
+            Graph(history);
             instruction = new List<object>();
             Output.Text += "************" + "\n";
             Output.Text += "\n";
@@ -91,32 +104,15 @@ namespace Roulette
 
         }
 
-        
-
         private void But1v18_Click(object sender, EventArgs e) { InstructioInput("HighLow 1-18", 1, RoulletConb.HighLow); }
-
         private void But19v36_Click(object sender, EventArgs e) { InstructioInput("HighLow 1-19", 19, RoulletConb.HighLow); }
-
-
-        private void Nech_Click(object sender, EventArgs e) { InstructioInput("EvenOdd", 3, RoulletConb.EvenOdd); }
-       
-
+        private void Nech_Click(object sender, EventArgs e) { InstructioInput("EvenOdd", 3, RoulletConb.EvenOdd); }   
         private void But2k1_3_Click(object sender, EventArgs e) { InstructioInput("Columns Bet 3 ", 3, RoulletConb.ColumnsBet); }
-
         private void But2k1_2_Click(object sender, EventArgs e) { InstructioInput("Columns Bet 2 ", 2, RoulletConb.ColumnsBet); }
-
         private void But2k1_1_Click(object sender, EventArgs e) { InstructioInput("Columns Bet 1 ", 1, RoulletConb.ColumnsBet); }
-
-
-
         private void Three12_Click(object sender, EventArgs e) { InstructioInput("Dozens Bet 3", 25, RoulletConb.DozensBet); }
-
-
         private void Two12_Click(object sender, EventArgs e) { InstructioInput("Dozens Bet  2", 13, RoulletConb.DozensBet); }
-
-
         private void One12_Click(object sender, EventArgs e) { InstructioInput("Dozens Bet 1", 3, RoulletConb.DozensBet); }
-
         private void Chet_Click(object sender, EventArgs e) { InstructioInput("EvenOdd", 4, RoulletConb.EvenOdd); }
 
         #region Nubmer
@@ -157,18 +153,15 @@ namespace Roulette
         private void Button02_Click(object sender, EventArgs e) { InstructioInput("2", 2, RoulletConb.Number); }
         private void Button01_Click(object sender, EventArgs e) { InstructioInput("1", 1, RoulletConb.Number); }
         private void Zerro_Click(object sender, EventArgs e) { }
-        #endregion
-
-        
+        #endregion      
         private void Button6_Click(object sender, EventArgs e){InstructioInput("Red", 1, RoulletConb.Color);}
-        private void Button7_Click(object sender, EventArgs e) { InstructioInput("Black", 2, RoulletConb.Color); }
+        private void Button7_Click(object sender, EventArgs e) { InstructioInput("Black", 2, RoulletConb.Color);}
        
 
         //Выводит информацию о ставке.
         //0 Название ставки
         //1 на что ставим
         //3 дейсвие
-
         private void InstructioInput(string value,int value_rate,object addRoul)
         {
             instruction.Add(value);
@@ -205,7 +198,29 @@ namespace Roulette
 
         private void Start_Game_Load(object sender, EventArgs e)
         {
+           
+            
+        }
 
+        //Построение графика
+        public void Graph(PointPairList list)
+        {
+
+            GraphPane pan = zed.GraphPane;
+            pan.Title.Text = "График банка";
+            pan.XAxis.Title.Text = "Колличество игр";
+            pan.YAxis.Title.Text = "Сумма";
+
+            pan.AddCurve(null,list, System.Drawing.Color.Blue);
+
+            zed.AxisChange();
+            zed.Invalidate();
+
+        }
+
+        private void Zed_Load_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }
