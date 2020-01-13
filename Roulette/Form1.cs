@@ -211,7 +211,7 @@ namespace Roulette
             pan.XAxis.Title.Text = "Колличество игр";
             pan.YAxis.Title.Text = "Сумма";
 
-            pan.AddCurve(null,list, System.Drawing.Color.Blue);
+            pan.AddCurve(null,list, System.Drawing.Color.Blue,SymbolType.Diamond);
 
             zed.AxisChange();
             zed.Invalidate();
@@ -221,6 +221,12 @@ namespace Roulette
         private void Zed_Load_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void GraphClear_Click(object sender, EventArgs e)
+        {
+            history.Clear();
+            count = 0;
         }
     }
 }
