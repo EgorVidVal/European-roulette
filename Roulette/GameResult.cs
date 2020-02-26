@@ -137,7 +137,7 @@ namespace Roulette
                 if (rand >= 1 && rand <= 12)
                 {
                     
-                    if (number == 1)
+                    if (number == 3)
                     {
                         return 1;
                     }
@@ -193,7 +193,7 @@ namespace Roulette
         {
             if (Outcome(rand, number) == 1)
             {
-                return rate * 3;
+                return rate * 2;
             }
             return 0;
         }
@@ -217,7 +217,7 @@ namespace Roulette
         {
             if (Outcome(rand, number) == 1)
             {
-                return rate * 3;
+                return rate * 2;
             }
             return 0;
         }
