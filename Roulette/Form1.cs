@@ -23,30 +23,29 @@ namespace Roulette
 
         //Данные о ставке
         List<object> instruction = new List<object>() { };
-        
         //Данные о ставке для повторения
         List<object> instruction_Copy = new List<object>() { };
+        //Сумма всех ставок.
         int allBank = 0;
-
         //Список для хранений историй банка и колличества игр
         PointPairList history = new PointPairList();
         //Счетчик колличетсва игр      
         int count = 0;
-        //Условия 
+        //Условия для инструкции
         List<object> Conditions = new List<object>() { };
+
         private void Button1_Click(object sender, EventArgs e)
         {
             StartGame();
         }
-
+        //Выводить на данные на табло или нет.
         bool stream = false;
-        bool bank_on_off = true;
-        int bank = 0;
-        public void StartGame()
+   
+        public int StartGame()
         {
             int z = Random_rull();
-            BaseGame bas = new BaseGame();
 
+            BaseGame bas = new BaseGame();
             if (checkBox1.Checked == false)
             {
                 Output.Text += "***********\n";
@@ -58,39 +57,71 @@ namespace Roulette
                 Output.Text += "\n";
                 Output.Text += "Результат: \n";
             }
-            
-           
-            //Проверяет все ставки из интрукции
+
+
+            ////Проверяет все ставки из интрукции
+            //for (int i = 0; i < instruction.Count(); i++)
+            //{
+            //    if (Convert.ToString(instruction[i].GetType()) == "Roulette.RoulletConb")
+            //    {
+            //        //Если в инструкции RoulletConb там надятся сведения о ставке.
+            //        BaseGame game = CombStatr((RoulletConb)instruction[i]);
+
+            //        if (game.Outcome(z, (int)instruction[i + 1]) == 0)
+            //        {
+            //            if (checkBox1.Checked == false) Output.Text += "Ставка" + instruction[i + 2] + " на " + instruction[i - 1] + " Проиграла\n";
+            //        }
+            //        else
+            //        {
+            //            int bank = game.Bank((int)numericUpDown1.Value, z, (int)instruction[i + 1]);
+            //            if (checkBox1.Checked == false) Output.Text += "Ставка на " + instruction[i - 1] + " победила, выигрыш: " + bank + "\n";
+            //            // обновляет банк если выиград
+            //            richTextBox7.Text = Convert.ToString(Convert.ToInt32(richTextBox7.Text) + bank);
+            //        }
+            //    }
+            //}
+            int result = Calculation(z);
+
+            //Добавляет в список колилчество денег и какой ход для визуализации на графике.
+            history.Add((double)count, Convert.ToDouble(richTextBox7.Text));
+            count++;
+            //Graph(history);
+            instruction_Copy = instruction;
+            instruction = new List<object>();
+            if (checkBox1.Checked == false) Output.Text += "************" + "\n";
+            if (checkBox1.Checked == false) Output.Text += "\n";
+            //Graph(history);
+            return result; 
+        }
+
+        public int Calculation(int z)
+        {
             for (int i = 0; i < instruction.Count(); i++)
             {
                 if (Convert.ToString(instruction[i].GetType()) == "Roulette.RoulletConb")
                 {
                     //Если в инструкции RoulletConb там надятся сведения о ставке.
                     BaseGame game = CombStatr((RoulletConb)instruction[i]);
-                    
+
                     if (game.Outcome(z, (int)instruction[i + 1]) == 0)
                     {
                         if (checkBox1.Checked == false) Output.Text += "Ставка" + instruction[i + 2] + " на " + instruction[i - 1] + " Проиграла\n";
+                        return 0;
                     }
                     else
                     {
                         int bank = game.Bank((int)numericUpDown1.Value, z, (int)instruction[i + 1]);
-                        if (checkBox1.Checked == false)  Output.Text += "Ставка на " + instruction[i - 1] + " победила, выигрыш: " + bank + "\n";
+                        if (checkBox1.Checked == false) Output.Text += "Ставка на " + instruction[i - 1] + " победила, выигрыш: " + bank + "\n";
                         // обновляет банк если выиград
                         richTextBox7.Text = Convert.ToString(Convert.ToInt32(richTextBox7.Text) + bank);
+
+                        return 1;
                     }
                 }
             }
-
-            //Добавляет в список колилчество денег и какой ход для визуализации на графике.
-            history.Add((double)count, Convert.ToDouble(richTextBox7.Text));
-            count++;
-            Graph(history);
-            instruction_Copy = instruction;
-            instruction = new List<object>();
-            if (checkBox1.Checked == false) Output.Text += "************" + "\n";
-            if (checkBox1.Checked == false) Output.Text += "\n";
+            return 2;
         }
+        
         static BaseGame CombStatr(RoulletConb roulletConb)
         {
             switch (roulletConb)
@@ -239,10 +270,11 @@ namespace Roulette
             pan.XAxis.Title.Text = "Колличество игр";
             pan.YAxis.Title.Text = "Сумма";
 
-            pan.AddCurve(null,list, System.Drawing.Color.Blue,SymbolType.Diamond);
+            pan.AddCurve(null,list, System.Drawing.Color.Blue,SymbolType.None);
 
             zed.AxisChange();
             zed.Invalidate();
+            
 
         }
 
@@ -276,20 +308,29 @@ namespace Roulette
 
             for (int x = 0; x < numericUpDown2.Value; x++)
             {
-
-                if (count == numericUpDown3.Value)
+                if (count >= numericUpDown3.Value)
                 {
-                  
-                    StartGame();
+                    int result  = StartGame();
                     ReturnRate();
-                    
-                    count = 0;
-                }
 
+                    if(Conditions[4] == "null")
+                    {
+                        count = 0;
+                    }
+
+                    if (Conditions[4] == "gameall")
+                    {
+                        if(result == 1)
+                        {
+                            count = 0;
+                        }
+                    }
+
+                }
 
                 //Проверяет все ставки из интрукции
                 for (int i = 0; i < Conditions.Count() - 1; i++)
-                {
+                {         
                     Start_Game f = new Start_Game();
 
                     int z = f.Random_rull();
@@ -297,7 +338,6 @@ namespace Roulette
                     {
                         //Если в инструкции RoulletConb там надятся сведения о ставке.
                         BaseGame game = CombStatr((RoulletConb)Conditions[i + 1]);
-
 
                         if (game.Outcome(z, (int)Conditions[i]) == 0)
                         {
@@ -324,7 +364,31 @@ namespace Roulette
                         }
                     }
                 }
+            }         
+            PointPairList geaphic = new PointPairList();
+
+            if(history.Count > 500)
+            {
+                int x = history.Count / 500;
+                for(int i =0;i>501;i+= x)
+                {
+                    try
+                    {
+                        geaphic[x] = history[x];
+                    }
+                    catch
+                    {
+                        break;
+                    }
+                    
+                }
+                Graph(geaphic);
             }
+            else
+            {
+                Graph(history);
+            }
+            
         }
         //Включает режим автоиструкции
         bool conditions = false; 
@@ -367,6 +431,21 @@ namespace Roulette
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             stream = true;
+        }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            Conditions.Add("not"); 
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            Conditions.Add("gameall");
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            Conditions.Add("null");
         }
     }
 }
