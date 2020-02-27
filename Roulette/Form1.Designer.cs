@@ -1091,7 +1091,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richTextBox7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox Output;
+        public System.Windows.Forms.RichTextBox Output;
         private System.Windows.Forms.Button button1;
         private ZedGraph.ZedGraphControl zed;
         private System.Windows.Forms.Button GraphClear;

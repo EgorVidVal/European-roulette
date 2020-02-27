@@ -44,7 +44,7 @@ namespace Roulette
         public int StartGame()
         {
             int z = Random_rull();
-
+            
             BaseGame bas = new BaseGame();
             if (checkBox1.Checked == false)
             {
@@ -85,7 +85,7 @@ namespace Roulette
             //Добавляет в список колилчество денег и какой ход для визуализации на графике.
             history.Add((double)count, Convert.ToDouble(richTextBox7.Text));
             count++;
-            //Graph(history);
+            Graph(history);
             instruction_Copy = instruction;
             instruction = new List<object>();
             if (checkBox1.Checked == false) Output.Text += "************" + "\n";
@@ -239,7 +239,7 @@ namespace Roulette
             }
             
         }
-        private void Output_TextChanged(object sender, EventArgs e)
+        public void Output_TextChanged(object sender, EventArgs e)
         {
             Output.SelectionStart = Output.TextLength;
             Output.ScrollToCaret();
@@ -299,11 +299,20 @@ namespace Roulette
         
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            StartGameInstruction();
+
+            System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
+            // вызов метода в другой поток с дополнительными параметрами в скобке
+            Thread MyThread = new System.Threading.Thread(delegate () { StartGameInstruction(); });
+            MyThread.IsBackground = true;
+            MyThread.Start(); // запускаем поток  
+
+            
+
         }
 
         public void StartGameInstruction()
         {
+            Start_Game start = new Start_Game(); 
             int count = 0;
 
             for (int x = 0; x < numericUpDown2.Value; x++)
@@ -325,7 +334,6 @@ namespace Roulette
                             count = 0;
                         }
                     }
-
                 }
 
                 //Проверяет все ставки из интрукции
@@ -367,27 +375,27 @@ namespace Roulette
             }         
             PointPairList geaphic = new PointPairList();
 
-            if(history.Count > 500)
-            {
-                int x = history.Count / 500;
-                for(int i =0;i>501;i+= x)
-                {
-                    try
-                    {
-                        geaphic[x] = history[x];
-                    }
-                    catch
-                    {
-                        break;
-                    }
+            //if(history.Count > 500)
+            //{
+            //    int x = history.Count / 500;
+            //    for(int i =0;i>501;i+= x)
+            //    {
+            //        try
+            //        {
+            //            geaphic[x] = history[x];
+            //        }
+            //        catch
+            //        {
+            //            break;
+            //        }
                     
-                }
-                Graph(geaphic);
-            }
-            else
-            {
-                Graph(history);
-            }
+            //    }
+            //    Graph(geaphic);
+            //}
+            //else
+            //{
+            //    Graph(history);
+            //}
             
         }
         //Включает режим автоиструкции
