@@ -6,15 +6,8 @@ using System.Threading.Tasks;
 
 namespace Roulette
 {
-    class Test : Start_Game
+    interface Result
     {
-       
-
-        public void qwert()
-        {
-          
-
-            Output.Text = "привет";
-        }
+        
     }
 }
