@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Roulette
 {
-    interface Result
+    interface IResult
     {
-        
+        int Check_the_result(int random);
+        List<object> Outresult();
+        int Random();
+
+       
     }
 }

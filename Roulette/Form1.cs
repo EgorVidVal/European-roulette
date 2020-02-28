@@ -451,5 +451,12 @@ namespace Roulette
         {
 
         }
+
+        private void Button12_Click(object sender, EventArgs e)
+        {
+            Checktheresult ceck = new Checktheresult();
+            ceck.Bank = (int)numericUpDown1.Value;
+            ceck.Intruction = instruction;
+        }
     }
 }
