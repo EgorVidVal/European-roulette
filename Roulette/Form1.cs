@@ -91,7 +91,7 @@ namespace Roulette
             history.Add(count, Convert.ToDouble(richTextBox7.Text));
             count++;
             //Thread.Sleep(15);
-            
+            Graph(history);
             instruction_Copy = instruction;
             instruction = new List<object>();
             if (checkBox1.Checked == false) Output.Text += "************" + "\n";
@@ -385,7 +385,7 @@ namespace Roulette
             Thread MyThread = new System.Threading.Thread(delegate () { StartGameInstruction(); });
             MyThread.IsBackground = true;
             MyThread.Start(); // запускаем поток  
-            Graph(history);
+            //Graph(history);
 
 
 
@@ -452,11 +452,37 @@ namespace Roulette
 
         }
 
+        List<object> hist;
+        public List<object> Hist
+        {
+            get{ return hist; }
+            set{ hist = value; }
+        }
         private void Button12_Click(object sender, EventArgs e)
         {
+            BaseGame bas = new BaseGame();
+
             Checktheresult ceck = new Checktheresult();
-            ceck.Bank = (int)numericUpDown1.Value;
+            ceck.Bank = Convert.ToInt32(richTextBox7.Text);
             ceck.Intruction = instruction;
+
+            int z = ceck.Outresult();
+
+            Output.Text += "Выпадение\n";
+
+            Output.Text += "\n" + bas.Color_nubmer(z) + "\n";
+            Output.Text += Convert.ToString(z) + "\n";
+            Output.Text += "\n";
+
+            foreach (object c in ceck.data)
+            {
+                Console.WriteLine(c);
+            }
+
+            richTextBox7.Text = Convert.ToString(ceck.Bank);
+
+            instruction.Clear();
+
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Roulette
     class Checktheresult : IResult
     {
 
+        
 
         List<object> instruction;
 
@@ -24,14 +25,19 @@ namespace Roulette
             get { return instruction; }
             set { instruction = value; }
         }
+       
+        public List<object> data = new List<object>() { };
 
         public int Check_the_result(int z)
         {
+            data.Clear();
             BaseGame bas = new BaseGame();
+            foreach(object c in instruction)
+            {
+                Console.WriteLine(c);
+            }
 
-            List<object> data = new List<object>() { };
-
-            for (int i = 0; i < instruction.Count(); i++)
+            for (int i = 0; i < instruction.Count() - 2; i++)
             {
                 if (Convert.ToString(instruction[i].GetType()) == "Roulette.RoulletConb")
                 {
@@ -40,37 +46,40 @@ namespace Roulette
 
                     if (game.Outcome(z, (int)instruction[i + 1]) == 0)
                     {
-                        return 0;
-                        //data.Add("Ставка" + instruction[i + 2] + " на " + instruction[i - 1] + " Проиграла");
+
+                        data.Add("Ставка" + instruction[i + 2] + " на " + instruction[i - 1] + " Проиграла");
 
                     }
                     else
                     {
-                        
-                        int money  = game.Bank((int)instruction[i + 2], z, (int)instruction[i + 1]);
+                        Console.WriteLine("***********");
+                        Console.WriteLine(instruction[i + 2]);
+                        Console.WriteLine(instruction[i + 1]);
+                        Console.WriteLine("***********");
+                        int money = game.Bank(Convert.ToInt32(instruction[i + 2]), z, Convert.ToInt32(instruction[i + 1]));
                         bank += money;
-                        //data.Add("Ставка на " + instruction[i - 1] + " победила, выигрыш: " + money);
-                        return 1;
-
+                        data.Add("Ставка на " + instruction[i - 1] + " победила, выигрыш: " + money);
                     }
                 }
             }
+
+           
             return 2;
         }
 
-        public List<object> Outresult()
+        public int Outresult()
         {
-            
-            List<object> result = new List<object>() { };
             int z = Random();
             Check_the_result(z);
 
-            return result;
+            Start_Game start = new Start_Game();
+            
 
+            return z;
         }
         public int Random()
         {
-           Random rand = new Random();
+            Random rand = new Random();
 
             return rand.Next(0, 37);
         }
@@ -96,7 +105,7 @@ namespace Roulette
             }
         }
 
-        
+      
     }
 
 }

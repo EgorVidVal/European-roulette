@@ -9,7 +9,7 @@ namespace Roulette
     interface IResult
     {
         int Check_the_result(int random);
-        List<object> Outresult();
+        int Outresult();
         int Random();
 
        
