@@ -9,8 +9,6 @@ namespace Roulette
     class Checktheresult : IResult
     {
 
-        
-
         List<object> instruction;
 
         int bank = 0;
@@ -28,60 +26,67 @@ namespace Roulette
        
         public List<object> data = new List<object>() { };
 
-        public int Check_the_result(int z)
+        public int Check_the_result(int rand)
         {
             data.Clear();
-            BaseGame bas = new BaseGame();
-            foreach(object c in instruction)
-            {
-                Console.WriteLine(c);
-            }
+            BaseGame game = new BaseGame();
 
             for (int i = 0; i < instruction.Count() - 2; i++)
             {
-                if (Convert.ToString(instruction[i].GetType()) == "Roulette.RoulletConb")
+                switch (Instruct(i, rand, instruction, game))
                 {
-                    //Если в инструкции RoulletConb там надятся сведения о ставке.
-                    BaseGame game = CombStatr((RoulletConb)instruction[i]);
-
-                    if (game.Outcome(z, (int)instruction[i + 1]) == 0)
-                    {
-
-                        data.Add("Ставка" + instruction[i + 2] + " на " + instruction[i - 1] + " Проиграла");
-
-                    }
-                    else
-                    {
-                        Console.WriteLine("***********");
-                        Console.WriteLine(instruction[i + 2]);
-                        Console.WriteLine(instruction[i + 1]);
-                        Console.WriteLine("***********");
-                        int money = game.Bank(Convert.ToInt32(instruction[i + 2]), z, Convert.ToInt32(instruction[i + 1]));
-                        bank += money;
-                        data.Add("Ставка на " + instruction[i - 1] + " победила, выигрыш: " + money);
-                    }
+                    case 0:
+                        data.Add("Ставка" + instruction[i + 2] + " на " + instruction[i + 1] + " Проиграла");
+                        break;
+                    case 1:
+                        game = CombStatr((RoulletConb)instruction[i]);
+                        int money = game.Bank(Convert.ToInt32(instruction[i + 2]), rand, Convert.ToInt32(instruction[i + 1]));   
+                        bank += money;                      
+                        data.Add("Ставка на " + instruction[i + 1] + " победила, выигрыш: " + money);
+                        break;
+                    default:
+                         break;
                 }
             }
-
-           
             return 2;
         }
 
-        public int Outresult()
+        public int AutoGame(int numberOfGames, int rand, List<object> instruct)
         {
-            int z = Random();
-            Check_the_result(z);
+            BaseGame game = new BaseGame();
+            //Прошла ставка для проверки или нет
+            List<int> outp = new List<int>() { };
 
-            Start_Game start = new Start_Game();
-            
+            int x = Instruct(numberOfGames,rand, instruct, game);
+            if (x == 0) return 0;
+            if (x == 1) return 1;
 
-            return z;
+            return 2;
         }
-        public int Random()
+        public int Instruct(int i, int z, List<object> instruct, BaseGame game)
         {
-            Random rand = new Random();
+            if (Convert.ToString(instruct[i].GetType()) == "Roulette.RoulletConb")
+            {
+                //Если в инструкции RoulletConb там надятся сведения о ставке.
+                game = CombStatr((RoulletConb)instruct[i]);
 
-            return rand.Next(0, 37);
+                if (game.Outcome(z, (int)instruct[i + 1]) == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            return 2;
+        }
+
+        public void Outresult(int rand)
+        {            
+            Check_the_result(rand);
+
+            Start_Game start = new Start_Game();        
         }
 
         static BaseGame CombStatr(RoulletConb roulletConb)

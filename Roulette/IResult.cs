@@ -9,9 +9,7 @@ namespace Roulette
     interface IResult
     {
         int Check_the_result(int random);
-        int Outresult();
-        int Random();
-
-       
+        void Outresult(int rand);
+     
     }
 }
