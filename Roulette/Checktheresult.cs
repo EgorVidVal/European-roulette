@@ -51,18 +51,6 @@ namespace Roulette
             return 2;
         }
 
-        public int AutoGame(int numberOfGames, int rand, List<object> instruct)
-        {
-            BaseGame game = new BaseGame();
-            //Прошла ставка для проверки или нет
-            List<int> outp = new List<int>() { };
-
-            int x = Instruct(numberOfGames,rand, instruct, game);
-            if (x == 0) return 0;
-            if (x == 1) return 1;
-
-            return 2;
-        }
         public int Instruct(int i, int z, List<object> instruct, BaseGame game)
         {
             if (Convert.ToString(instruct[i].GetType()) == "Roulette.RoulletConb")
@@ -86,7 +74,7 @@ namespace Roulette
         {            
             Check_the_result(rand);
 
-            Start_Game start = new Start_Game();        
+              
         }
 
         static BaseGame CombStatr(RoulletConb roulletConb)

@@ -16,9 +16,11 @@ namespace Roulette
 
     public partial class Start_Game : Form
     {
+       
         public Start_Game()
         {
             InitializeComponent();
+           
         }
 
         //Данные о ставке
@@ -91,7 +93,7 @@ namespace Roulette
             history.Add(count, Convert.ToDouble(richTextBox7.Text));
             count++;
             //Thread.Sleep(15);
-            Graph(history);
+            //Graph(history);
             instruction_Copy = instruction;
             instruction = new List<object>();
             if (checkBox1.Checked == false) Output.Text += "************" + "\n";
@@ -146,71 +148,81 @@ namespace Roulette
                     throw new Exception("Что то не то");
             }
         }
+        int counts = 0;
         public void StartGameInstruction()
         {
 
-            Start_Game start = new Start_Game();
-            int count = 0;
-            int xxxx = 0;
+
+            counts = 0;
 
             Checktheresult ceck = new Checktheresult();
             //Проверяет все ставки из интрукции
+            Start_Game f = new Start_Game();
 
-            for (int i = 0; i < 10; i++)
+            for (int x = 0; x < numericUpDown2.Value; x++)
             {
-                xxxx++;
-                Start_Game f = new Start_Game();
+
+                
                 BaseGame game = new BaseGame();
 
-                if (count >= numericUpDown3.Value)
+                if (counts >= numericUpDown3.Value)
                 {
-                    Console.WriteLine("ок");
+                    Console.WriteLine("sdadasd");
                     int result = StartTest();
-
+                    
                     ReturnRate();
 
-                    Console.WriteLine(instruction.Count());
+                   
                     if (Conditions[5] == "null")
                     {
-                        count = 0;
+                        counts = 0;
                     }
 
                     if (Conditions[5] == "gameall")
                     {
                         if (result == 1)
                         {
-                            count = 0;
+                            counts = 0;
                         }
                     }
                 }
+
                 int z = f.Random_rull();
 
-                if (ceck.AutoGame(i, z, Conditions) == 0)
+                for (int i = 0; i < Conditions.Count; i++)
                 {
-                    if (Conditions[3] == "not")
+                    if (ceck.Instruct(i, z, Conditions, game) == 0)
                     {
-                        count++;
+
+                        if (Conditions[3] == "yes")
+                        {
+                            counts++;  
+                        }
+                        else
+                        {
+                           counts = 0;
+                        }
                     }
                     else
                     {
-                        count = 0;
-                    }
-                }
-                else
-                {
-                    if (Conditions[3] == "yes")
-                    {
-                        count++;
-                    }
-                    else
-                    {
-                        count = 0;
+                        if (Conditions[3] == "not")
+                        {
+                            counts++;
+                        }
+                        else
+                        {
+                            counts = 0;
+                        }
+
                     }
 
                 }
+
+                //GC.Collect();
 
             }
-            Console.WriteLine(xxxx);
+           
+            Graph(history);
 
 
 
@@ -229,15 +241,26 @@ namespace Roulette
             pan.Title.Text = "График банка";
             pan.XAxis.Title.Text = "Колличество игр";
             pan.YAxis.Title.Text = "Сумма";
-
-
-
             pan.AddCurve(null, list, System.Drawing.Color.Blue, SymbolType.None);
+
+            Console.WriteLine(list.Count);
 
             zed.AxisChange();
             zed.Invalidate();
+        }
 
-
+        static void clearing(PointPairList list)
+        {
+            do
+            {
+                Console.WriteLine("проход");
+                for (int i = 0; i < list.Count - 2; i += 2)
+                {
+                    list.RemoveAt(i);
+                }
+            }
+            while (list.Count > 50);
+         
         }
 
         //Выводит информацию о ставке.
@@ -387,7 +410,7 @@ namespace Roulette
             Thread MyThread = new System.Threading.Thread(delegate () { StartGameInstruction(); });
             MyThread.IsBackground = true;
             MyThread.Start(); // запускаем поток  
-            //Graph(history);
+
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -468,50 +491,67 @@ namespace Roulette
         {
             StartTest();
         }
+
+        List<int> mon = new List<int>() { };
+        List<int> gam = new List<int>() { };
+
+        BaseGame bas = new BaseGame();
+        Checktheresult ceck = new Checktheresult();
         public int StartTest()
         {
-            BaseGame bas = new BaseGame();
-
+            int money = 0;
             int z = Random();
 
-            Output.Text += "***********\n";
-            Output.Text += "Выпадение\n";
-            Output.Text += "\n" + bas.Color_nubmer(z) + "\n";
-            Output.Text += Convert.ToString(z) + "\n";
-            Output.Text += "\n";
-            Output.Text += "Результат: \n";
-
-            Checktheresult ceck = new Checktheresult();
+            if(checkBox1.Checked == false)
+            {
+                Output.Text += "***********\n";
+                Output.Text += "Выпадение\n";
+                Output.Text += "\n" + bas.Color_nubmer(z) + "\n";
+                Output.Text += Convert.ToString(z) + "\n";
+                Output.Text += "\n";
+                Output.Text += "Результат: \n";
+            }
+                 
             ceck.Bank = Convert.ToInt32(richTextBox7.Text);
             ceck.Intruction = instruction;
             ceck.Outresult(z);
 
-            foreach (string outp in ceck.data)
+            if(checkBox1.Checked == false)
             {
-                Output.Text += outp + "\n";
+                foreach (string outp in ceck.data)
+                {
+                    Output.Text += outp + "\n";
+                }
             }
-            foreach (object c in instruction)
-            {
-               
-            }
-            Console.WriteLine(instruction.Count);
-            richTextBox7.Text = Convert.ToString(ceck.Bank);
-
+            money = ceck.Bank;
+            
            
+            history.Add(count, money);
+         
+            count++;
+            Console.WriteLine(count);
 
-            //history.Add(count, Convert.ToDouble(richTextBox7.Text));
-            //count++;
-            ////Thread.Sleep(15);
-            //Graph(history);
             instruction_Copy = instruction;
             instruction = new List<object>();
-
             instruction.Clear();
 
             if (Convert.ToInt32(richTextBox7.Text) <= ceck.Bank)
+            {
                 return 1;
+            }          
             else
+            {
+                richTextBox7.Text = Convert.ToString(ceck.Bank);
                 return 0;
+            }
+               
+      
+        }
+
+        private void Button13_Click(object sender, EventArgs e)
+        {
+            for(int i = 0;i < 5000;i++)
+                StartTest();
         }
     }
 }
