@@ -33,30 +33,32 @@ namespace Roulette
 
             for (int i = 0; i < instruction.Count() - 2; i++)
             {
-                switch (Instruct(i, rand, instruction, game))
+                if (Convert.ToString(instruction[i].GetType()) == "Roulette.RoulletConb")
                 {
-                    case 0:
-                        data.Add("Ставка" + instruction[i + 2] + " на " + instruction[i + 1] + " Проиграла");
-                        break;
-                    case 1:
-                        game = CombStatr((RoulletConb)instruction[i]);
-                        int money = game.Bank(Convert.ToInt32(instruction[i + 2]), rand, Convert.ToInt32(instruction[i + 1]));   
-                        bank += money;                      
-                        data.Add("Ставка на " + instruction[i + 1] + " победила, выигрыш: " + money);
-                        break;
-                    default:
-                         break;
+                    switch (Instruct(i, rand, instruction))
+                    {
+                        case 0:
+                            data.Add("Ставка" + instruction[i + 2] + " на " + instruction[i + 1] + " Проиграла");
+                            break;
+                        case 1:
+                            game = CombStatr((RoulletConb)instruction[i]);
+                            int money = game.Bank(Convert.ToInt32(instruction[i + 2]), rand, Convert.ToInt32(instruction[i + 1]));
+                            bank += money;
+                            data.Add("Ставка на " + instruction[i + 1] + " победила, выигрыш: " + money);
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
             return 2;
         }
 
-        public int Instruct(int i, int z, List<object> instruct, BaseGame game)
+        public int Instruct(int i, int z, List<object> instruct)
         {
-            if (Convert.ToString(instruct[i].GetType()) == "Roulette.RoulletConb")
-            {
+
                 //Если в инструкции RoulletConb там надятся сведения о ставке.
-                game = CombStatr((RoulletConb)instruct[i]);
+                BaseGame game = CombStatr((RoulletConb)instruct[i]);
 
                 if (game.Outcome(z, (int)instruct[i + 1]) == 0)
                 {
@@ -67,13 +69,10 @@ namespace Roulette
                     return 1;
                 }
             }
-            return 2;
-        }
 
         public void Outresult(int rand)
         {            
             Check_the_result(rand);
-
               
         }
 

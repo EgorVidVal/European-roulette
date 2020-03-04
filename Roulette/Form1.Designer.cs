@@ -100,17 +100,18 @@
             this.button11 = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // chet
             // 
             this.chet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.chet.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chet.Location = new System.Drawing.Point(139, 471);
+            this.chet.Location = new System.Drawing.Point(140, 456);
             this.chet.Name = "chet";
             this.chet.Size = new System.Drawing.Size(75, 31);
             this.chet.TabIndex = 125;
@@ -122,7 +123,7 @@
             // 
             this.but1v18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.but1v18.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.but1v18.Location = new System.Drawing.Point(62, 471);
+            this.but1v18.Location = new System.Drawing.Point(63, 456);
             this.but1v18.Name = "but1v18";
             this.but1v18.Size = new System.Drawing.Size(75, 31);
             this.but1v18.TabIndex = 124;
@@ -134,7 +135,7 @@
             // 
             this.but19v36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.but19v36.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.but19v36.Location = new System.Drawing.Point(454, 470);
+            this.but19v36.Location = new System.Drawing.Point(455, 455);
             this.but19v36.Name = "but19v36";
             this.but19v36.Size = new System.Drawing.Size(75, 31);
             this.but19v36.TabIndex = 123;
@@ -146,7 +147,7 @@
             // 
             this.nech.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.nech.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.nech.Location = new System.Drawing.Point(377, 470);
+            this.nech.Location = new System.Drawing.Point(378, 455);
             this.nech.Name = "nech";
             this.nech.Size = new System.Drawing.Size(75, 31);
             this.nech.TabIndex = 122;
@@ -158,7 +159,7 @@
             // 
             this.but2k1_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.but2k1_3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.but2k1_3.Location = new System.Drawing.Point(535, 330);
+            this.but2k1_3.Location = new System.Drawing.Point(536, 315);
             this.but2k1_3.Name = "but2k1_3";
             this.but2k1_3.Size = new System.Drawing.Size(50, 30);
             this.but2k1_3.TabIndex = 121;
@@ -170,7 +171,7 @@
             // 
             this.but2k1_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.but2k1_2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.but2k1_2.Location = new System.Drawing.Point(535, 366);
+            this.but2k1_2.Location = new System.Drawing.Point(536, 351);
             this.but2k1_2.Name = "but2k1_2";
             this.but2k1_2.Size = new System.Drawing.Size(50, 30);
             this.but2k1_2.TabIndex = 120;
@@ -182,7 +183,7 @@
             // 
             this.but2k1_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.but2k1_1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.but2k1_1.Location = new System.Drawing.Point(535, 402);
+            this.but2k1_1.Location = new System.Drawing.Point(536, 387);
             this.but2k1_1.Name = "but2k1_1";
             this.but2k1_1.Size = new System.Drawing.Size(50, 30);
             this.but2k1_1.TabIndex = 119;
@@ -194,7 +195,7 @@
             // 
             this.three12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.three12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.three12.Location = new System.Drawing.Point(377, 438);
+            this.three12.Location = new System.Drawing.Point(378, 423);
             this.three12.Name = "three12";
             this.three12.Size = new System.Drawing.Size(152, 29);
             this.three12.TabIndex = 118;
@@ -206,7 +207,7 @@
             // 
             this.two12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.two12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.two12.Location = new System.Drawing.Point(220, 438);
+            this.two12.Location = new System.Drawing.Point(221, 423);
             this.two12.Name = "two12";
             this.two12.Size = new System.Drawing.Size(152, 29);
             this.two12.TabIndex = 117;
@@ -218,7 +219,7 @@
             // 
             this.one12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.one12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.one12.Location = new System.Drawing.Point(62, 438);
+            this.one12.Location = new System.Drawing.Point(63, 423);
             this.one12.Name = "one12";
             this.one12.Size = new System.Drawing.Size(152, 29);
             this.one12.TabIndex = 116;
@@ -230,7 +231,7 @@
             // 
             this.zerro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.zerro.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.zerro.Location = new System.Drawing.Point(11, 330);
+            this.zerro.Location = new System.Drawing.Point(12, 315);
             this.zerro.Name = "zerro";
             this.zerro.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.zerro.Size = new System.Drawing.Size(45, 102);
@@ -244,7 +245,7 @@
             this.butt35.BackColor = System.Drawing.Color.Black;
             this.butt35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt35.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt35.Location = new System.Drawing.Point(493, 366);
+            this.butt35.Location = new System.Drawing.Point(494, 351);
             this.butt35.Name = "butt35";
             this.butt35.Size = new System.Drawing.Size(36, 30);
             this.butt35.TabIndex = 114;
@@ -257,7 +258,7 @@
             this.butt32.BackColor = System.Drawing.Color.DarkRed;
             this.butt32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt32.Location = new System.Drawing.Point(454, 366);
+            this.butt32.Location = new System.Drawing.Point(455, 351);
             this.butt32.Name = "butt32";
             this.butt32.Size = new System.Drawing.Size(36, 30);
             this.butt32.TabIndex = 113;
@@ -270,7 +271,7 @@
             this.butt29.BackColor = System.Drawing.Color.Black;
             this.butt29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt29.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt29.Location = new System.Drawing.Point(416, 366);
+            this.butt29.Location = new System.Drawing.Point(417, 351);
             this.butt29.Name = "butt29";
             this.butt29.Size = new System.Drawing.Size(36, 30);
             this.butt29.TabIndex = 112;
@@ -283,7 +284,7 @@
             this.butt26.BackColor = System.Drawing.Color.Black;
             this.butt26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt26.Location = new System.Drawing.Point(377, 366);
+            this.butt26.Location = new System.Drawing.Point(378, 351);
             this.butt26.Name = "butt26";
             this.butt26.Size = new System.Drawing.Size(36, 30);
             this.butt26.TabIndex = 111;
@@ -296,7 +297,7 @@
             this.butt23.BackColor = System.Drawing.Color.DarkRed;
             this.butt23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt23.Location = new System.Drawing.Point(336, 366);
+            this.butt23.Location = new System.Drawing.Point(337, 351);
             this.butt23.Name = "butt23";
             this.butt23.Size = new System.Drawing.Size(36, 30);
             this.butt23.TabIndex = 110;
@@ -309,7 +310,7 @@
             this.butto11.BackColor = System.Drawing.Color.Black;
             this.butto11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butto11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butto11.Location = new System.Drawing.Point(178, 366);
+            this.butto11.Location = new System.Drawing.Point(179, 351);
             this.butto11.Name = "butto11";
             this.butto11.Size = new System.Drawing.Size(36, 30);
             this.butto11.TabIndex = 109;
@@ -322,7 +323,7 @@
             this.butt20.BackColor = System.Drawing.Color.Black;
             this.butt20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt20.Location = new System.Drawing.Point(297, 366);
+            this.butt20.Location = new System.Drawing.Point(298, 351);
             this.butt20.Name = "butt20";
             this.butt20.Size = new System.Drawing.Size(36, 30);
             this.butt20.TabIndex = 108;
@@ -335,7 +336,7 @@
             this.button08.BackColor = System.Drawing.Color.Black;
             this.button08.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button08.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button08.Location = new System.Drawing.Point(139, 366);
+            this.button08.Location = new System.Drawing.Point(140, 351);
             this.button08.Name = "button08";
             this.button08.Size = new System.Drawing.Size(36, 30);
             this.button08.TabIndex = 107;
@@ -348,7 +349,7 @@
             this.butt17.BackColor = System.Drawing.Color.Black;
             this.butt17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt17.Location = new System.Drawing.Point(259, 366);
+            this.butt17.Location = new System.Drawing.Point(260, 351);
             this.butt17.Name = "butt17";
             this.butt17.Size = new System.Drawing.Size(36, 30);
             this.butt17.TabIndex = 106;
@@ -361,7 +362,7 @@
             this.button05.BackColor = System.Drawing.Color.DarkRed;
             this.button05.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button05.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button05.Location = new System.Drawing.Point(101, 366);
+            this.button05.Location = new System.Drawing.Point(102, 351);
             this.button05.Name = "button05";
             this.button05.Size = new System.Drawing.Size(36, 30);
             this.button05.TabIndex = 105;
@@ -374,7 +375,7 @@
             this.butt14.BackColor = System.Drawing.Color.DarkRed;
             this.butt14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt14.Location = new System.Drawing.Point(220, 366);
+            this.butt14.Location = new System.Drawing.Point(221, 351);
             this.butt14.Name = "butt14";
             this.butt14.Size = new System.Drawing.Size(36, 30);
             this.butt14.TabIndex = 104;
@@ -387,7 +388,7 @@
             this.button02.BackColor = System.Drawing.Color.Black;
             this.button02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button02.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button02.Location = new System.Drawing.Point(62, 366);
+            this.button02.Location = new System.Drawing.Point(63, 351);
             this.button02.Name = "button02";
             this.button02.Size = new System.Drawing.Size(36, 30);
             this.button02.TabIndex = 103;
@@ -400,7 +401,7 @@
             this.butt34.BackColor = System.Drawing.Color.DarkRed;
             this.butt34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt34.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt34.Location = new System.Drawing.Point(493, 402);
+            this.butt34.Location = new System.Drawing.Point(494, 387);
             this.butt34.Name = "butt34";
             this.butt34.Size = new System.Drawing.Size(36, 30);
             this.butt34.TabIndex = 102;
@@ -413,7 +414,7 @@
             this.butt31.BackColor = System.Drawing.Color.Black;
             this.butt31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt31.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt31.Location = new System.Drawing.Point(454, 402);
+            this.butt31.Location = new System.Drawing.Point(455, 387);
             this.butt31.Name = "butt31";
             this.butt31.Size = new System.Drawing.Size(36, 30);
             this.butt31.TabIndex = 101;
@@ -426,7 +427,7 @@
             this.butt28.BackColor = System.Drawing.Color.Black;
             this.butt28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt28.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt28.Location = new System.Drawing.Point(416, 402);
+            this.butt28.Location = new System.Drawing.Point(417, 387);
             this.butt28.Name = "butt28";
             this.butt28.Size = new System.Drawing.Size(36, 30);
             this.butt28.TabIndex = 100;
@@ -439,7 +440,7 @@
             this.butt25.BackColor = System.Drawing.Color.DarkRed;
             this.butt25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt25.Location = new System.Drawing.Point(377, 402);
+            this.butt25.Location = new System.Drawing.Point(378, 387);
             this.butt25.Name = "butt25";
             this.butt25.Size = new System.Drawing.Size(36, 30);
             this.butt25.TabIndex = 99;
@@ -452,7 +453,7 @@
             this.butt36.BackColor = System.Drawing.Color.DarkRed;
             this.butt36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt36.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt36.Location = new System.Drawing.Point(493, 330);
+            this.butt36.Location = new System.Drawing.Point(494, 315);
             this.butt36.Name = "butt36";
             this.butt36.Size = new System.Drawing.Size(36, 30);
             this.butt36.TabIndex = 98;
@@ -465,7 +466,7 @@
             this.butt33.BackColor = System.Drawing.Color.Black;
             this.butt33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt33.Location = new System.Drawing.Point(454, 330);
+            this.butt33.Location = new System.Drawing.Point(455, 315);
             this.butt33.Name = "butt33";
             this.butt33.Size = new System.Drawing.Size(36, 30);
             this.butt33.TabIndex = 97;
@@ -478,7 +479,7 @@
             this.butt30.BackColor = System.Drawing.Color.DarkRed;
             this.butt30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt30.Location = new System.Drawing.Point(416, 330);
+            this.butt30.Location = new System.Drawing.Point(417, 315);
             this.butt30.Name = "butt30";
             this.butt30.Size = new System.Drawing.Size(36, 30);
             this.butt30.TabIndex = 96;
@@ -491,7 +492,7 @@
             this.butt27.BackColor = System.Drawing.Color.DarkRed;
             this.butt27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt27.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt27.Location = new System.Drawing.Point(377, 330);
+            this.butt27.Location = new System.Drawing.Point(378, 315);
             this.butt27.Name = "butt27";
             this.butt27.Size = new System.Drawing.Size(36, 30);
             this.butt27.TabIndex = 95;
@@ -504,7 +505,7 @@
             this.butt22.BackColor = System.Drawing.Color.Black;
             this.butt22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt22.Location = new System.Drawing.Point(336, 402);
+            this.butt22.Location = new System.Drawing.Point(337, 387);
             this.butt22.Name = "butt22";
             this.butt22.Size = new System.Drawing.Size(36, 30);
             this.butt22.TabIndex = 94;
@@ -517,7 +518,7 @@
             this.butt19.BackColor = System.Drawing.Color.DarkRed;
             this.butt19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt19.Location = new System.Drawing.Point(297, 402);
+            this.butt19.Location = new System.Drawing.Point(298, 387);
             this.butt19.Name = "butt19";
             this.butt19.Size = new System.Drawing.Size(36, 30);
             this.butt19.TabIndex = 93;
@@ -530,7 +531,7 @@
             this.butt16.BackColor = System.Drawing.Color.DarkRed;
             this.butt16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt16.Location = new System.Drawing.Point(259, 402);
+            this.butt16.Location = new System.Drawing.Point(260, 387);
             this.butt16.Name = "butt16";
             this.butt16.Size = new System.Drawing.Size(36, 30);
             this.butt16.TabIndex = 92;
@@ -543,7 +544,7 @@
             this.butt13.BackColor = System.Drawing.Color.Black;
             this.butt13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt13.Location = new System.Drawing.Point(220, 402);
+            this.butt13.Location = new System.Drawing.Point(221, 387);
             this.butt13.Name = "butt13";
             this.butt13.Size = new System.Drawing.Size(36, 30);
             this.butt13.TabIndex = 91;
@@ -556,7 +557,7 @@
             this.butto10.BackColor = System.Drawing.Color.Black;
             this.butto10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butto10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butto10.Location = new System.Drawing.Point(178, 402);
+            this.butto10.Location = new System.Drawing.Point(179, 387);
             this.butto10.Name = "butto10";
             this.butto10.Size = new System.Drawing.Size(36, 30);
             this.butto10.TabIndex = 90;
@@ -569,7 +570,7 @@
             this.butt24.BackColor = System.Drawing.Color.Black;
             this.butt24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt24.Location = new System.Drawing.Point(336, 330);
+            this.butt24.Location = new System.Drawing.Point(337, 315);
             this.butt24.Name = "butt24";
             this.butt24.Size = new System.Drawing.Size(36, 30);
             this.butt24.TabIndex = 89;
@@ -582,7 +583,7 @@
             this.butt12.BackColor = System.Drawing.Color.DarkRed;
             this.butt12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt12.Location = new System.Drawing.Point(178, 330);
+            this.butt12.Location = new System.Drawing.Point(179, 315);
             this.butt12.Name = "butt12";
             this.butt12.Size = new System.Drawing.Size(36, 30);
             this.butt12.TabIndex = 88;
@@ -595,7 +596,7 @@
             this.button07.BackColor = System.Drawing.Color.DarkRed;
             this.button07.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button07.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button07.Location = new System.Drawing.Point(139, 402);
+            this.button07.Location = new System.Drawing.Point(140, 387);
             this.button07.Name = "button07";
             this.button07.Size = new System.Drawing.Size(36, 30);
             this.button07.TabIndex = 87;
@@ -608,7 +609,7 @@
             this.butt21.BackColor = System.Drawing.Color.DarkRed;
             this.butt21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt21.Location = new System.Drawing.Point(297, 330);
+            this.butt21.Location = new System.Drawing.Point(298, 315);
             this.butt21.Name = "butt21";
             this.butt21.Size = new System.Drawing.Size(36, 30);
             this.butt21.TabIndex = 86;
@@ -621,7 +622,7 @@
             this.button09.BackColor = System.Drawing.Color.DarkRed;
             this.button09.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button09.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button09.Location = new System.Drawing.Point(139, 330);
+            this.button09.Location = new System.Drawing.Point(140, 315);
             this.button09.Name = "button09";
             this.button09.Size = new System.Drawing.Size(36, 30);
             this.button09.TabIndex = 85;
@@ -634,7 +635,7 @@
             this.button04.BackColor = System.Drawing.Color.Black;
             this.button04.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button04.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button04.Location = new System.Drawing.Point(101, 402);
+            this.button04.Location = new System.Drawing.Point(102, 387);
             this.button04.Name = "button04";
             this.button04.Size = new System.Drawing.Size(36, 30);
             this.button04.TabIndex = 84;
@@ -647,7 +648,7 @@
             this.butt18.BackColor = System.Drawing.Color.DarkRed;
             this.butt18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt18.Location = new System.Drawing.Point(259, 330);
+            this.butt18.Location = new System.Drawing.Point(260, 315);
             this.butt18.Name = "butt18";
             this.butt18.Size = new System.Drawing.Size(36, 30);
             this.butt18.TabIndex = 83;
@@ -660,7 +661,7 @@
             this.button06.BackColor = System.Drawing.Color.Black;
             this.button06.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button06.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button06.Location = new System.Drawing.Point(101, 330);
+            this.button06.Location = new System.Drawing.Point(102, 315);
             this.button06.Name = "button06";
             this.button06.Size = new System.Drawing.Size(36, 30);
             this.button06.TabIndex = 82;
@@ -673,7 +674,7 @@
             this.button01.BackColor = System.Drawing.Color.DarkRed;
             this.button01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button01.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button01.Location = new System.Drawing.Point(62, 402);
+            this.button01.Location = new System.Drawing.Point(63, 387);
             this.button01.Name = "button01";
             this.button01.Size = new System.Drawing.Size(36, 30);
             this.button01.TabIndex = 81;
@@ -686,7 +687,7 @@
             this.butt15.BackColor = System.Drawing.Color.Black;
             this.butt15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butt15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butt15.Location = new System.Drawing.Point(220, 330);
+            this.butt15.Location = new System.Drawing.Point(221, 315);
             this.butt15.Name = "butt15";
             this.butt15.Size = new System.Drawing.Size(36, 30);
             this.butt15.TabIndex = 80;
@@ -699,7 +700,7 @@
             this.button03.BackColor = System.Drawing.Color.DarkRed;
             this.button03.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button03.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button03.Location = new System.Drawing.Point(62, 330);
+            this.button03.Location = new System.Drawing.Point(63, 315);
             this.button03.Name = "button03";
             this.button03.Size = new System.Drawing.Size(36, 30);
             this.button03.TabIndex = 79;
@@ -710,7 +711,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Maroon;
-            this.button6.Location = new System.Drawing.Point(220, 473);
+            this.button6.Location = new System.Drawing.Point(221, 458);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 29);
             this.button6.TabIndex = 78;
@@ -720,7 +721,7 @@
             // Black
             // 
             this.Black.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Black.Location = new System.Drawing.Point(297, 473);
+            this.Black.Location = new System.Drawing.Point(298, 458);
             this.Black.Name = "Black";
             this.Black.Size = new System.Drawing.Size(72, 29);
             this.Black.TabIndex = 77;
@@ -734,7 +735,7 @@
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(377, 530);
+            this.numericUpDown1.Location = new System.Drawing.Point(329, 525);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -758,7 +759,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(475, 511);
+            this.label2.Location = new System.Drawing.Point(427, 506);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 127;
@@ -766,7 +767,7 @@
             // 
             // richTextBox7
             // 
-            this.richTextBox7.Location = new System.Drawing.Point(458, 530);
+            this.richTextBox7.Location = new System.Drawing.Point(410, 525);
             this.richTextBox7.Name = "richTextBox7";
             this.richTextBox7.Size = new System.Drawing.Size(71, 20);
             this.richTextBox7.TabIndex = 126;
@@ -776,7 +777,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(384, 511);
+            this.label1.Location = new System.Drawing.Point(336, 506);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 129;
@@ -793,9 +794,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(276, 530);
+            this.button1.Location = new System.Drawing.Point(234, 526);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 21);
             this.button1.TabIndex = 131;
             this.button1.Text = "Start Game";
             this.button1.UseVisualStyleBackColor = true;
@@ -818,7 +819,7 @@
             // 
             // GraphClear
             // 
-            this.GraphClear.Location = new System.Drawing.Point(62, 511);
+            this.GraphClear.Location = new System.Drawing.Point(14, 506);
             this.GraphClear.Name = "GraphClear";
             this.GraphClear.Size = new System.Drawing.Size(75, 38);
             this.GraphClear.TabIndex = 133;
@@ -829,7 +830,7 @@
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.Location = new System.Drawing.Point(62, 568);
+            this.button2.Location = new System.Drawing.Point(9, 575);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 134;
@@ -839,9 +840,9 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(62, 597);
+            this.numericUpDown2.Location = new System.Drawing.Point(9, 604);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            10000,
+            1000000000,
             0,
             0,
             0});
@@ -857,7 +858,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(154, 580);
+            this.button3.Location = new System.Drawing.Point(101, 587);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 136;
@@ -867,27 +868,27 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(235, 568);
+            this.button4.Location = new System.Drawing.Point(182, 575);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 137;
             this.button4.Text = "выпадет";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.button4.Click += new System.EventHandler(this.Yes);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(316, 568);
+            this.button5.Location = new System.Drawing.Point(263, 575);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 138;
             this.button5.Text = "Раз";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            this.button5.Click += new System.EventHandler(this.Volume_Game);
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(316, 597);
+            this.numericUpDown3.Location = new System.Drawing.Point(263, 604);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(75, 20);
             this.numericUpDown3.TabIndex = 139;
@@ -900,17 +901,17 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(559, 580);
+            this.button7.Location = new System.Drawing.Point(511, 575);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 140;
             this.button7.Text = "То";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click_1);
+            this.button7.Click += new System.EventHandler(this.That);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(252, 508);
+            this.button8.Location = new System.Drawing.Point(213, 501);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(117, 21);
             this.button8.TabIndex = 141;
@@ -921,7 +922,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(143, 510);
+            this.checkBox1.Location = new System.Drawing.Point(95, 505);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(58, 17);
             this.checkBox1.TabIndex = 142;
@@ -931,71 +932,74 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(235, 594);
+            this.button9.Location = new System.Drawing.Point(182, 601);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 143;
             this.button9.Text = "не выпадет";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.Button9_Click);
+            this.button9.Click += new System.EventHandler(this.Not);
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(397, 568);
+            this.button10.Location = new System.Drawing.Point(349, 563);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(156, 23);
             this.button10.TabIndex = 144;
             this.button10.Text = "Ставить до выигрыша";
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.Button10_Click);
+            this.button10.Click += new System.EventHandler(this.Rate_Long);
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(397, 594);
+            this.button11.Location = new System.Drawing.Point(349, 589);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(156, 23);
             this.button11.TabIndex = 145;
             this.button11.Text = "Обнулять условия";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.Button11_Click);
+            this.button11.Click += new System.EventHandler(this.Rate_One);
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(143, 534);
+            this.checkBox2.Location = new System.Drawing.Point(511, 622);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(133, 17);
+            this.checkBox2.Size = new System.Drawing.Size(172, 17);
             this.checkBox2.TabIndex = 146;
-            this.checkBox2.Text = "Упрощенный график";
+            this.checkBox2.Text = "Не ставить после выигрыша";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(690, 580);
+            this.button12.Location = new System.Drawing.Point(349, 618);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.Size = new System.Drawing.Size(156, 23);
             this.button12.TabIndex = 147;
-            this.button12.Text = "Тест";
+            this.button12.Text = "Количество ставок подряд";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.Button12_Click);
             // 
-            // button13
+            // numericUpDown4
             // 
-            this.button13.Location = new System.Drawing.Point(649, 610);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(116, 23);
-            this.button13.TabIndex = 148;
-            this.button13.Text = "тест графика";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.Button13_Click);
+            this.numericUpDown4.Location = new System.Drawing.Point(371, 647);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown4.TabIndex = 149;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown4.ValueChanged += new System.EventHandler(this.NumericUpDown4_ValueChanged);
             // 
             // Start_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 643);
-            this.Controls.Add(this.button13);
+            this.ClientSize = new System.Drawing.Size(814, 690);
+            this.Controls.Add(this.numericUpDown4);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.button11);
@@ -1069,10 +1073,10 @@
             this.Controls.Add(this.Black);
             this.Name = "Start_Game";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Start_Game_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1151,7 +1155,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
     }
 }
 
