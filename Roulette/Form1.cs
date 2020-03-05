@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -44,50 +45,48 @@ namespace Roulette
         //Включает режим автоиструкции
         bool conditions = false;
 
-        //Выводить на данные на табло или нет.
-        bool stream = false;
-
-        int zip = 0;
       
         int counts = 0;
+        //Автоматический сценарий
         public void StartGameInstruction()
         {
             counts = 0;
 
             Checktheresult ceck = new Checktheresult();
 
-            //Проверяет все ставки из интрукции
-
             Random rand = new Random();
             for (int x = 0; x < numericUpDown2.Value; x++)
             {
                 int z =  rand.Next(0, 37);
                 BaseGame game = new BaseGame();
+
                 
                 if (counts >= numericUpDown3.Value)
                 {
-                   
-                    int result = StartGame();
+                    if ((string)Conditions[5] == "stop")
+                    {
+                        break;
+                    }
+                    int result = StartGame(z);
                     ReturnRate();
 
-                    if (Conditions[5] == "null")
+                    if ((string)Conditions[5] == "null")
                     {
                         counts = 0;
                     }
-
-                    if (Conditions[5] == "gameall")
+                    if ((string)Conditions[5] == "gameall")
                     {
                         if (result == 1)
                         {
                             counts = 0;
                         }
                     }
-                    if (Conditions[5] == "NumberRate")
+                    if ((string)Conditions[5] == "NumberRate")
                     {
                         //Console.WriteLine("условия {}",z);
                         for(int rate = 0;rate < numericUpDown4.Value - 1;rate++)
                         {
-                            int res = StartGame();
+                            int res = StartGame(rand.Next(0, 37));
                             ReturnRate();
 
                             if (checkBox2.Checked == true)
@@ -111,7 +110,7 @@ namespace Roulette
 
                         if (ceck.Instruct(i, z, Conditions) == 0)
                         {
-                            if (Conditions[3] == "not")
+                            if ((string)Conditions[3] == "not")
                             {
                                 counts++;
                             }
@@ -122,7 +121,7 @@ namespace Roulette
                         }
                         if (ceck.Instruct(i, z, Conditions) == 1)
                         {
-                            if (Conditions[3] == "yes")
+                            if ((string)Conditions[3] == "yes")
                             {
                                 counts++;
                             }
@@ -131,8 +130,7 @@ namespace Roulette
                                 counts = 0;
                             }
                         }
-                    }
-                        
+                    }    
                 }
                 //GC.Collect();
             }
@@ -271,7 +269,7 @@ namespace Roulette
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            StartGame();
+            StartGame(Random());
         }
       
 
@@ -315,6 +313,9 @@ namespace Roulette
         private void Button3_Click(object sender, EventArgs e)
         {
             conditions = true;
+
+            //button4.BackColor = System.Drawing.Color.A;
+
         }
 
         private void NumericUpDown3_ValueChanged(object sender, EventArgs e)
@@ -341,6 +342,7 @@ namespace Roulette
 
         private void That(object sender, EventArgs e)
         {
+            Conditions.Add("all");
             conditions = false;
         }
 
@@ -357,7 +359,6 @@ namespace Roulette
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            stream = true;
         }
 
        
@@ -400,10 +401,10 @@ namespace Roulette
 
         BaseGame bas = new BaseGame();
         Checktheresult ceck = new Checktheresult();
-        public int StartGame()
+        public int StartGame(int z)
         {
             int money = 0;
-            int z = Random();
+            
 
             if(checkBox1.Checked == false)
             {
@@ -414,6 +415,7 @@ namespace Roulette
                 Output.Text += Convert.ToString(z) + "\n";
                 Output.Text += "\n";
                 Output.Text += "Результат: \n";
+                richTextBox1.Text += Convert.ToString(z) + " ";
             }
                  
             ceck.Bank = Convert.ToInt32(richTextBox7.Text);
@@ -462,6 +464,22 @@ namespace Roulette
         private void NumericUpDown4_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button13_Click_1(object sender, EventArgs e)
+        {
+            Conditions.Add("stop"); 
+        }
+
+        private void Start_Game_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionStart = richTextBox1.TextLength;
+            richTextBox1.ScrollToCaret();
         }
     }
 }
