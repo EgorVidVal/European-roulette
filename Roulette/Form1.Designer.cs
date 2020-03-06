@@ -103,10 +103,24 @@
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.button13 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.button16 = new System.Windows.Forms.Button();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
             this.SuspendLayout();
             // 
             // chet
@@ -737,7 +751,7 @@
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(342, 547);
+            this.numericUpDown1.Location = new System.Drawing.Point(215, 546);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -761,7 +775,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(440, 528);
+            this.label2.Location = new System.Drawing.Point(313, 527);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 127;
@@ -769,7 +783,7 @@
             // 
             // richTextBox7
             // 
-            this.richTextBox7.Location = new System.Drawing.Point(423, 547);
+            this.richTextBox7.Location = new System.Drawing.Point(296, 546);
             this.richTextBox7.Name = "richTextBox7";
             this.richTextBox7.Size = new System.Drawing.Size(71, 20);
             this.richTextBox7.TabIndex = 126;
@@ -779,7 +793,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(349, 528);
+            this.label1.Location = new System.Drawing.Point(222, 527);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 129;
@@ -798,7 +812,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(261, 545);
+            this.button1.Location = new System.Drawing.Point(134, 544);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 22);
             this.button1.TabIndex = 131;
@@ -823,7 +837,7 @@
             // 
             // GraphClear
             // 
-            this.GraphClear.Location = new System.Drawing.Point(536, 562);
+            this.GraphClear.Location = new System.Drawing.Point(10, 579);
             this.GraphClear.Name = "GraphClear";
             this.GraphClear.Size = new System.Drawing.Size(75, 38);
             this.GraphClear.TabIndex = 133;
@@ -925,7 +939,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(138, 545);
+            this.button8.Location = new System.Drawing.Point(11, 544);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(117, 22);
             this.button8.TabIndex = 141;
@@ -936,7 +950,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(621, 582);
+            this.checkBox1.Location = new System.Drawing.Point(475, 623);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(58, 17);
             this.checkBox1.TabIndex = 142;
@@ -983,7 +997,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(621, 559);
+            this.checkBox2.Location = new System.Drawing.Point(475, 600);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(172, 17);
             this.checkBox2.TabIndex = 146;
@@ -1037,12 +1051,145 @@
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1_TextChanged);
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(653, 569);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(70, 23);
+            this.button15.TabIndex = 153;
+            this.button15.Text = "Умножить";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Location = new System.Drawing.Point(729, 569);
+            this.numericUpDown5.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown5.TabIndex = 154;
+            this.numericUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.Location = new System.Drawing.Point(729, 598);
+            this.numericUpDown6.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown6.TabIndex = 156;
+            this.numericUpDown6.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(653, 598);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(70, 23);
+            this.button16.TabIndex = 155;
+            this.button16.Text = "Прибавить";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.Location = new System.Drawing.Point(729, 627);
+            this.numericUpDown8.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown8.TabIndex = 158;
+            this.numericUpDown8.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(653, 627);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(70, 20);
+            this.button18.TabIndex = 157;
+            this.button18.Text = "Вычесть";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(536, 569);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(98, 23);
+            this.button17.TabIndex = 159;
+            this.button17.Text = "Если победа";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(536, 652);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(98, 23);
+            this.button19.TabIndex = 160;
+            this.button19.Text = "Если проигрыш";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.Button19_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(653, 655);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(70, 20);
+            this.button14.TabIndex = 161;
+            this.button14.Text = "Ставка";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown7
+            // 
+            this.numericUpDown7.Location = new System.Drawing.Point(729, 655);
+            this.numericUpDown7.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown7.TabIndex = 162;
+            this.numericUpDown7.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // Start_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 619);
+            this.ClientSize = new System.Drawing.Size(821, 702);
+            this.Controls.Add(this.numericUpDown7);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.button19);
+            this.Controls.Add(this.button17);
+            this.Controls.Add(this.numericUpDown8);
+            this.Controls.Add(this.button18);
+            this.Controls.Add(this.numericUpDown6);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.numericUpDown5);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.numericUpDown4);
@@ -1124,6 +1271,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1205,6 +1356,16 @@
         private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.NumericUpDown numericUpDown7;
     }
 }
 

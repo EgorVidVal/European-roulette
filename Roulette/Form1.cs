@@ -405,7 +405,6 @@ namespace Roulette
         {
             int money = 0;
             
-
             if(checkBox1.Checked == false)
             {
                 Output.Text += "***************\n";            
@@ -417,7 +416,11 @@ namespace Roulette
                 Output.Text += "Результат: \n";
                 richTextBox1.Text += Convert.ToString(z) + " ";
             }
-                 
+            //foreach(object xxx in instruction)
+            //{
+            //    Console.WriteLine(xxx);
+            //}
+
             ceck.Bank = Convert.ToInt32(richTextBox7.Text);
             ceck.Intruction = instruction;
             ceck.Outresult(z);
@@ -430,8 +433,7 @@ namespace Roulette
                 }
             }
             money = ceck.Bank;
-            
-           
+
             history.Add(count, money);
          
             count++;
@@ -439,8 +441,6 @@ namespace Roulette
             instruction_Copy = instruction;
             instruction = new List<object>();
             instruction.Clear();
-
-            
 
             if (Convert.ToInt32(richTextBox7.Text) == ceck.Bank)
             {
@@ -452,8 +452,7 @@ namespace Roulette
             {
                 richTextBox7.Text = Convert.ToString(ceck.Bank);
                 return 1;
-            }
-            
+            } 
         }
 
         private void Button13_Click(object sender, EventArgs e)
@@ -476,10 +475,20 @@ namespace Roulette
 
         }
 
+        int ьultiply = 1;
+        int divide = 1;
+        int subtract = 0;
+
+
         private void RichTextBox1_TextChanged(object sender, EventArgs e)
         {
             richTextBox1.SelectionStart = richTextBox1.TextLength;
             richTextBox1.ScrollToCaret();
+        }
+
+        private void Button19_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
